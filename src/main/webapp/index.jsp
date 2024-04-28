@@ -1,5 +1,11 @@
+<!DOCTYPE html>
 <html>
 <body>
-	<h1 style="color: green; font-size: 40px;" align="left">  MIND CIRCUIT TRAINING INSTITUTE - We don't just train people ; We COACH, MENTOR and BUILD PEOPLE ! </h1>
+
+<h2>HTML Links</h2>
+<p>HTML links are defined with the a tag:</p>
+
+<a href="https://github.com/arunkumardama/Shell-Scripting">This is a link</a>
+
 </body>
 </html>
