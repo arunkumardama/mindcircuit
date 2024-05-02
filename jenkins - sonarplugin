@@ -1,0 +1,40 @@
+pipeline {
+    agent any
+     tools {
+    jdk 'java'
+
+  }
+    
+
+    stages {
+        stage('Clone code from Git') {
+            steps {
+                echo 'Clone Mindcircuit from Git'
+git branch: 'main', url: 'https://github.com/arunkumardama/mindcircuit.git'
+
+            }
+        }
+stage('Review code from Sonarqube') {
+            steps {
+                echo 'review code using sonar'
+                sh 'mvn clean compile'
+                sh 'mvn sonar:sonar'
+
+            }
+        }
+stage('Build Artifact') {
+            steps {
+                echo 'Build war/jar artifact'
+sh 'mvn clean install'
+            }
+        }
+stage('deploy to tomcat') {
+            steps {
+                echo 'deploy artifact to tomcat'
+deploy adapters: [tomcat9(credentialsId: '4497c958-3145-4b31-b4dd-fbc50fa36e9c', path: '', url: 'http://100.25.15.115:8091/')], contextPath: 'mindcircuit app', war: '**/*.war'
+            }
+        }
+
+
+    }
+}
