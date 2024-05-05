@@ -28,12 +28,12 @@
 	<distributionManagement>
 		 <snapshotRepository>
 		    <id>nexusRepo</id>
-		    <url>http://50.19.185.120:8081/repository/mc-snapshot/</url>
+		    <url>http://100.25.212.224:8081/repository/mc-app-snapshot/</url>
 		 </snapshotRepository>
 		
 		<repository>
 		    <id>nexusRepo</id>
-		    <url>http://50.19.185.120:8081/repository/mc-release/</url>
+		    <url>http://100.25.212.224:8081/repository/mc-app-release/</url>
 		</repository>
   	</distributionManagement>
 	
